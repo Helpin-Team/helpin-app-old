@@ -6,6 +6,8 @@ import { withNavigation } from 'react-navigation';
 
 import { Transition } from 'react-navigation-fluid-transitions';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import {
   View, Text, TouchableOpacity, AsyncStorage,
 } from 'react-native';
@@ -156,6 +158,16 @@ class SignIn extends Component {
                 <Text style={styles.underlineText}>recuperar senha</Text>
               </TouchableOpacity>
             </View>
+          </View>
+          
+          <View style={styles.socialActions}>
+            <TouchableOpacity style={[styles.socialBtn, styles.facebook]} onPress={() => {}}>
+              <Icon style={styles.socialIcon} name="facebook" size={28} />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={[styles.socialBtn, styles.google]} onPress={() => {}}>
+              <Icon style={styles.socialIcon} name="google" size={28} />
+            </TouchableOpacity>
           </View>
         </View>
 

@@ -35,6 +35,36 @@ const styles = StyleSheet.create({
   },
 
   actions: {
+    marginBottom: metrics.baseMargin * 4,
+  },
+
+  socialActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  socialBtn: {
+    height: 70,
+    width: 70,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 100,
+    marginBottom: metrics.baseMargin,
+  },
+
+  facebook: {
+    marginRight: metrics.baseMargin * 2,
+
+    backgroundColor: '#3C5A99',
+  },
+
+  google: {
+    backgroundColor: '#db3236',
+  },
+
+  socialIcon: {
+    color: colors.white,
   },
 
   buttons: {
