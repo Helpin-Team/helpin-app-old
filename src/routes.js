@@ -13,6 +13,7 @@ import ResetPassword from './screens/Login/ResetPassword';
 import Splash from './screens/Login/Splash';
 
 import Home from './screens/Home';
+import Settings from './screens/Settings';
 
 import { colors } from './styles';
 
@@ -33,6 +34,7 @@ const Routes = createAppContainer(
     Splash: { screen: Splash },
     Login: { screen: Login },
     Home: { screen: Home },
+    Settings: { screen: Settings },
   }, {
     initialRouteName: 'Splash',
     defaultNavigationOptions: {

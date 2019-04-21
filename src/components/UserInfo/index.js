@@ -1,4 +1,5 @@
 import React from 'react';
+import { withNavigation } from 'react-navigation';
 
 import { View, Text } from 'react-native';
 import { Avatar } from '..';
@@ -9,19 +10,21 @@ import {
   Container, Info, TextName, TextSubtitle, Config,
 } from './styles';
 
-const UserInfo = () => (
-  <Container>
-    <Avatar photo={Photo} />
+function UserInfo({ navigation }) {
+  return (
+    <Container>
+      <Avatar photo={Photo} />
 
-    <Info>
-      <TextName>Efraim de Andrade Morais Junior</TextName>
-      <TextSubtitle>Analise e desenvolvimento de sistemas</TextSubtitle>
-    </Info>
+      <Info>
+        <TextName>Efraim de Andrade Morais Junior</TextName>
+        <TextSubtitle>Analise e desenvolvimento de sistemas</TextSubtitle>
+      </Info>
 
-    <Config>
-      <Icon name="settings" size={20} />
-    </Config>
-  </Container>
-);
+      <Config onPress={() => navigation.navigate('Settings')}>
+        <Icon name="settings" size={20} />
+      </Config>
+    </Container>
+  );
+}
 
-export default UserInfo;
+export default withNavigation(UserInfo);
