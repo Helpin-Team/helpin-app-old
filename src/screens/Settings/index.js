@@ -13,10 +13,62 @@ function Settings() {
     console.tron.log('teste');
   });
 
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(2);
 
   function changeTab(tab) {
     return setActiveTab(tab);
+  }
+
+  function personalData() {
+    return (
+      <ScrollView contentContainerStyle={styles.Form}>
+        <Input
+          label="Nome"
+          style={styles.Field}
+        />
+
+        <Input
+          label="E-mail"
+          style={styles.Field}
+        />
+
+        <Input
+          label="Curso"
+          style={styles.Field}
+        />
+
+        <Input
+          label="WhatsApp"
+          style={styles.Field}
+        />
+
+        <Input
+          label="Skype"
+          style={styles.Field}
+        />
+
+        <Input
+          label="WhatsApp"
+          style={styles.Field}
+        />
+
+        <Input
+          label="Skype"
+          style={styles.Field}
+        />
+      </ScrollView>
+    );
+  }
+
+  function myKnowledges() {
+    return (
+      <ScrollView contentContainerStyle={styles.Form}>
+        <Input
+          icon="plus"
+          label="Titulo"
+        />
+      </ScrollView>
+    );
   }
 
   return (
@@ -61,42 +113,7 @@ function Settings() {
         />
       </View>
 
-      <ScrollView contentContainerStyle={styles.Form}>
-        <Input
-          label="Nome"
-          style={styles.Field}
-        />
-
-        <Input
-          label="E-mail"
-          style={styles.Field}
-        />
-
-        <Input
-          label="Curso"
-          style={styles.Field}
-        />
-
-        <Input
-          label="WhatsApp"
-          style={styles.Field}
-        />
-
-        <Input
-          label="Skype"
-          style={styles.Field}
-        />
-
-        <Input
-          label="WhatsApp"
-          style={styles.Field}
-        />
-
-        <Input
-          label="Skype"
-          style={styles.Field}
-        />
-      </ScrollView>
+      { activeTab === 1 ? personalData() : myKnowledges()}
 
       <View style={styles.Bottom}>
         <Dissolve />

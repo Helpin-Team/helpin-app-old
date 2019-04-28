@@ -15,7 +15,7 @@ import styles from './styles';
 class Input extends React.Component {
   static propTypes = {
     type: PropTypes.string,
-    search: PropTypes.bool,
+    icon: PropTypes.string,
     value: PropTypes.string,
     label: PropTypes.string,
     style: PropTypes.shape(),
@@ -29,7 +29,7 @@ class Input extends React.Component {
     style: {},
     label: null,
     type: 'text',
-    search: false,
+    icon: '',
     selectItems: [],
     placeholder: '',
     onChangeText: () => {},
@@ -42,7 +42,7 @@ class Input extends React.Component {
 
   renderDefault = (props) => {
     const {
-      type, search, value, onChangeText, style,
+      type, icon, value, onChangeText, style,
     } = this.props;
 
     return (
@@ -58,9 +58,9 @@ class Input extends React.Component {
           ]}
         />
 
-        { search && (
+        { icon && (
           <TouchableOpacity onPress={() => {}} style={styles.icon}>
-            <Icon name="search" size={16} />
+            <Icon name={icon} size={22} color={colors.secondary} />
           </TouchableOpacity>
         ) }
 

@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
 
   Form: {
-    paddingBottom: metrics.basePadding * 4,
+    paddingBottom: metrics.basePadding,
     paddingHorizontal: metrics.basePadding * 2.4,
   },
 
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
 
   Bottom: {
     position: 'relative',
+    bottom: 0,
 
     paddingBottom: metrics.basePadding * 2,
     paddingHorizontal: metrics.basePadding * 2.4,
