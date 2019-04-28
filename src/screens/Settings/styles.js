@@ -6,12 +6,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.darker,
   },
+
   Background: {
     height: 100,
   },
+
   BackgroundImage: {
     height: 100,
   },
+
   BackgroundOverlay: {
     position: 'absolute',
     top: 0,
@@ -22,11 +25,15 @@ const styles = StyleSheet.create({
 
     backgroundColor: colors.darkTransparent,
   },
+
   User: {
+    width: metrics.screenWidth,
+    marginBottom: metrics.baseMargin * 2,
+
     alignItems: 'center',
     justifyContent: 'center',
-    width: metrics.screenWidth,
   },
+
   UserAvatar: {
     width: 120,
     height: 120,
@@ -34,13 +41,49 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     borderRadius: 100,
   },
+
   UserName: {
     ...fonts.medium,
     color: colors.light,
   },
+
   UserRole: {
     ...fonts.smaller,
     color: colors.light,
+  },
+
+  Tabs: {
+    marginBottom: metrics.baseMargin * 3,
+    paddingHorizontal: metrics.basePadding,
+
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+
+  ButtonRight: {
+    flex: 1,
+    marginLeft: 5,
+  },
+
+  ButtonLeft: {
+    flex: 1,
+    marginRight: 5,
+  },
+
+  Form: {
+    paddingBottom: metrics.basePadding * 4,
+    paddingHorizontal: metrics.basePadding * 2.4,
+  },
+
+  Field: {
+    marginBottom: metrics.baseMargin,
+  },
+
+  Bottom: {
+    position: 'relative',
+
+    paddingBottom: metrics.basePadding * 2,
+    paddingHorizontal: metrics.basePadding * 2.4,
   },
 });
 

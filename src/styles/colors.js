@@ -23,7 +23,7 @@ export default {
   secondaryGradient: ['#a574f1', '#f27878'],
   PurpleGradient: ['#a574f1', '#648ef2'],
 
-  transparent: 'transparent',
+  transparent: 'rgba(0, 0, 0, 0)',
   darkTransparent: 'rgba(0, 0, 0, 0.6)',
   whiteTransparent: 'rgba(255, 255, 255, 0.3)',
 };

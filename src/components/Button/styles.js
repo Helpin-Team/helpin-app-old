@@ -9,26 +9,27 @@ const styles = StyleSheet.create({
   },
 
   button: {
+    borderRadius: metrics.baseRadius * 10,
+
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
-    borderRadius: metrics.baseRadius * 10,
   },
 
   text: {
     color: colors.white,
-    textShadowColor: colors.darkMoreTransparent,
-    textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 10,
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowColor: colors.darkMoreTransparent,
   },
 });
 
 export const TextCustom = styled.Text`
-  font-weight: bold;
+  color: ${colors.light};
+  text-align: center;
+  font-weight: normal;
   font-family: 'SegoeUI';
   font-size: ${props => props.width};
-  text-align: center;
-  color: ${colors.light};
 `;
 
 export default styles;

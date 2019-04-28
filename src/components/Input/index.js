@@ -2,36 +2,37 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextInputMask from 'react-native-text-input-mask';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import {
   Picker, View, TouchableOpacity, Image, Text,
 } from 'react-native';
 
-import styles from './styles';
 import { colors } from '../../styles';
-
 import eye from '../../assets/images/icons/eye.png';
 import eyeOff from '../../assets/images/icons/eye-off.png';
 
+import styles from './styles';
+
 class Input extends React.Component {
   static propTypes = {
-    placeholder: PropTypes.string,
     type: PropTypes.string,
-    selectItems: PropTypes.arrayOf(PropTypes.string),
     search: PropTypes.bool,
-    value: PropTypes.string.isRequired,
-    onChangeText: PropTypes.func.isRequired,
-    style: PropTypes.shape(),
+    value: PropTypes.string,
     label: PropTypes.string,
+    style: PropTypes.shape(),
+    placeholder: PropTypes.string,
+    onChangeText: PropTypes.func,
+    selectItems: PropTypes.arrayOf(PropTypes.string),
   };
 
   static defaultProps = {
-    type: 'text',
-    selectItems: [],
-    search: false,
-    placeholder: '',
+    value: '',
     style: {},
     label: null,
+    type: 'text',
+    search: false,
+    selectItems: [],
+    placeholder: '',
+    onChangeText: () => {},
   }
 
   state = {
@@ -65,7 +66,10 @@ class Input extends React.Component {
 
         { type === 'password' && (
           <TouchableOpacity onPress={() => this.passwordVisibility()} style={styles.icon}>
-            <Image style={styles.eyeIcon} source={this.state.passwordVisibility ? eye : eyeOff} />
+            <Image 
+              style={styles.eyeIcon} 
+              source={this.state.passwordVisibility ? eye : eyeOff} 
+            />
           </TouchableOpacity>
         ) }
       </View>
@@ -78,8 +82,8 @@ class Input extends React.Component {
     return (
       <View style={[styles.default, styles.select]}>
         <Picker
-          selectedValue={this.state.item}
           style={styles.select}
+          selectedValue={this.state.item}
           onValueChange={(itemValue, itemIndex) => this.setState({ item: itemValue })}
         >
           {
@@ -107,19 +111,19 @@ class Input extends React.Component {
     const { passwordVisibility } = this.state;
 
     const props = {
-      placeholder,
       style,
-      secureTextEntry: type === 'password' && !passwordVisibility && true,
-      keyboardType: type === 'email' ? 'email-address' : 'default',
-      textContentType: type === 'email' ? 'emailAddress' : 'none',
-      mask: type === 'date' ? '[00]/[00]/[0000]' : false,
-      multiline: type === 'textarea',
-      numberOfLines: type === 'textarea' ? 6 : 1,
-      textAlignVertical: type === 'textarea' ? 'top' : 'center',
-      autoCapitalize: 'none',
+      placeholder,
       autoCorrect: false,
-      underlineColorAndroid: 'transparent',
+      autoCapitalize: 'none',
+      multiline: type === 'textarea',
       selectionColor: colors.lightBlue,
+      underlineColorAndroid: 'transparent',
+      numberOfLines: type === 'textarea' ? 6 : 1,
+      mask: type === 'date' ? '[00]/[00]/[0000]' : false,
+      textAlignVertical: type === 'textarea' ? 'top' : 'center',
+      textContentType: type === 'email' ? 'emailAddress' : 'none',
+      keyboardType: type === 'email' ? 'email-address' : 'default',
+      secureTextEntry: type === 'password' && !passwordVisibility && true,
     };
 
     return (

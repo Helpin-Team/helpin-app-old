@@ -17,10 +17,10 @@ const getTheme = (color) => {
 };
 
 const Button = ({
-  text, color, onPress, stylesContainer, textSize,
+  text, color, onPress, stylesContainer, textSize, disabled,
 }) => {
   const props = {
-    style: styles.button,
+    style: [styles.button, disabled && { opacity: 0.5 }],
     colors: getTheme(color),
     start: { x: 0, y: 5 },
     end: { x: 1, y: 1 },
@@ -38,14 +38,17 @@ const Button = ({
 Button.propTypes = {
   color: PropTypes.string,
   text: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
+  onPress: PropTypes.func,
   textSize: PropTypes.number,
+  disabled: PropTypes.bool,
   stylesContainer: PropTypes.oneOfType([PropTypes.shape(), PropTypes.arrayOf(PropTypes.shape())]),
 };
 
 Button.defaultProps = {
   stylesContainer: {},
   color: 'primary',
+  onPress: () => {},
+  disabled: false,
   textSize: 12,
 };
 
