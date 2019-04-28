@@ -13,7 +13,7 @@ function Settings() {
     console.tron.log('teste');
   });
 
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(1);
 
   function changeTab(tab) {
     return setActiveTab(tab);
@@ -34,16 +34,6 @@ function Settings() {
 
         <Input
           label="Curso"
-          style={styles.Field}
-        />
-
-        <Input
-          label="WhatsApp"
-          style={styles.Field}
-        />
-
-        <Input
-          label="Skype"
           style={styles.Field}
         />
 
@@ -113,7 +103,7 @@ function Settings() {
         />
       </View>
 
-      { activeTab === 1 ? personalData() : myKnowledges()}
+      { activeTab === 1 ? personalData() : myKnowledges() }
 
       <View style={styles.Bottom}>
         <Dissolve />

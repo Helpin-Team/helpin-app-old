@@ -58,7 +58,7 @@ class Input extends React.Component {
           ]}
         />
 
-        { icon && (
+        { !!icon && (
           <TouchableOpacity onPress={() => {}} style={styles.icon}>
             <Icon name={icon} size={22} color={colors.secondary} />
           </TouchableOpacity>
