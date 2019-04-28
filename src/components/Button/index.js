@@ -7,19 +7,13 @@ import styles, { TextCustom } from './styles';
 import { colors, fonts } from '../../styles';
 
 const getTheme = (color) => {
-  switch (color) {
-    case 'primary':
-      return colors.primaryGradient;
+  const localColors = {
+    primary: colors.primaryGradient,
+    secondary: colors.secondaryGradient,
+    purple: colors.PurpleGradient,
+  };
 
-    case 'secondary':
-      return colors.secondaryGradient;
-
-    case 'purple':
-      return colors.PurpleGradient;
-
-    default:
-      return colors.primaryGradient;
-  }
+  return localColors[color];
 };
 
 const Button = ({

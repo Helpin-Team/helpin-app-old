@@ -8,7 +8,7 @@ import Logo from '../../../assets/images/logo.png';
 const Splash = ({ navigation }) => {
   const handleInitialAuth = async () => {
     const userToken = await AsyncStorage.getItem('@User:id');
-    navigation.navigate(userToken ? 'Settings' : 'Login');
+    navigation.navigate(userToken ? 'Home' : 'Login');
   };
 
   return (
