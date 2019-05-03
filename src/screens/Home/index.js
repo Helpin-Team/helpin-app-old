@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -19,6 +20,8 @@ class Home extends React.Component {
   };
 
   render() {
+    const { navigation } = this.props
+
     return (
       <Container>
         <StatusBar backgroundColor={colors.primary} />
@@ -33,18 +36,18 @@ class Home extends React.Component {
 
         <Buttons>
           <Button
-            onPress={() => {}}
+            onPress={() => navigation.navigate('Forum')}
+            textSize={20}
             text="ajudar"
             color="secondary"
             stylesContainer={styles.button}
-            textSize={20}
           />
 
           <Button
             onPress={() => {}}
+            textSize={20}
             text="perguntar"
             stylesContainer={styles.button}
-            textSize={20}
           />
 
         </Buttons>
@@ -55,4 +58,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withNavigation(Home);

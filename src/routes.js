@@ -15,6 +15,8 @@ import Splash from './screens/Login/Splash';
 import Home from './screens/Home';
 import Settings from './screens/Settings';
 
+import Forum from './screens/Forum';
+
 import { colors } from './styles';
 
 const Login = createAppContainer(FluidNavigator({
@@ -35,6 +37,7 @@ const Routes = createAppContainer(
     Login: { screen: Login },
     Home: { screen: Home },
     Settings: { screen: Settings },
+    Forum: { screen: Forum },
   }, {
     initialRouteName: 'Splash',
     defaultNavigationOptions: {
