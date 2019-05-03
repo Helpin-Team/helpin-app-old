@@ -1,13 +1,31 @@
 import React from 'react';
 
-import { Text } from 'react-native';
+import { FloatChat, Button } from '../../components';
 
-import { Container } from './styles';
+import {
+  Container, Chat, Tabs, styles,
+} from './styles';
 
 function Forum() {
   return (
     <Container>
-      <Text>Forum</Text>
+      <Chat>
+        <FloatChat />
+      </Chat>
+
+      <Tabs>
+        <Button
+          text="ajudar"
+          color="secondary"
+          stylesContainer={[styles.ButtonCustom, styles.ButtonLeft]}
+        />
+
+        <Button
+          text="perguntar"
+          disabled
+          stylesContainer={[styles.ButtonCustom, styles.ButtonRight]}
+        />
+      </Tabs>
     </Container>
   );
 }
