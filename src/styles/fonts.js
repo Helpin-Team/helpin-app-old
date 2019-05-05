@@ -10,7 +10,6 @@ const textStyle = StyleSheet.create({
     lineHeight: 40,
     letterSpacing: 0,
     textAlign: 'left',
-    color: colors.dark,
   },
   bigger: {
     fontFamily: 'SegoeUI',
@@ -20,7 +19,6 @@ const textStyle = StyleSheet.create({
     lineHeight: 40,
     letterSpacing: 1.3,
     textAlign: 'left',
-    color: colors.dark,
   },
   big: {
     fontFamily: 'SegoeUI',

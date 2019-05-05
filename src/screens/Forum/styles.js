@@ -31,6 +31,8 @@ export const Chat = styled.View`
 `;
 
 export const Tabs = styled.View`
-  flex-direction: row;
   padding-top: 50px;
+  margin-bottom: 20px;
+
+  flex-direction: row;
 `;

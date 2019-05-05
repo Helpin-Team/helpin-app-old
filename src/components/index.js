@@ -7,6 +7,7 @@ import Avatar from './Avatar';
 import FloatChat from './FloatChat';
 import UserInfo from './UserInfo';
 import Dissolve from './Dissolve';
+import Courses from './Courses';
 
 export {
   Post,
@@ -15,6 +16,7 @@ export {
   Button,
   Avatar,
   Issues,
+  Courses,
   Dissolve,
   UserInfo,
   FloatChat,

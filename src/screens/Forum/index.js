@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FloatChat, Button } from '../../components';
+import { FloatChat, Button, Courses } from '../../components';
 
 import {
   Container, Chat, Tabs, styles,
@@ -26,6 +26,8 @@ function Forum() {
           stylesContainer={[styles.ButtonCustom, styles.ButtonRight]}
         />
       </Tabs>
+
+      <Courses />
     </Container>
   );
 }
