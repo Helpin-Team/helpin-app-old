@@ -36,7 +36,7 @@ class Home extends React.Component {
 
         <Buttons>
           <Button
-            onPress={() => navigation.navigate('Forum')}
+            onPress={() => navigation.navigate('Forum', { type: 'help' })}
             textSize={20}
             text="ajudar"
             color="secondary"
@@ -44,7 +44,7 @@ class Home extends React.Component {
           />
 
           <Button
-            onPress={() => {}}
+            onPress={() => navigation.navigate('Forum', { type: 'ask' })}
             textSize={20}
             text="perguntar"
             stylesContainer={styles.button}

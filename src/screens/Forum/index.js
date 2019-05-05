@@ -6,8 +6,9 @@ import {
   Container, Chat, Tabs, styles,
 } from './styles';
 
-function Forum() {
-  const [typeTab, setTypeTab] = useState('help');
+function Forum({ navigation }) {
+  const initialType = navigation.getParam('type');
+  const [typeTab, setTypeTab] = useState(initialType);
 
   return (
     <Container>

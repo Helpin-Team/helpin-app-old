@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import { colors } from '../../styles';
-
 import Course from './Course';
 import { Container } from './styles';
 
