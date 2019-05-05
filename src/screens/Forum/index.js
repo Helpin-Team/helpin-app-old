@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FloatChat, Button, Courses } from '../../components';
 
@@ -7,6 +7,8 @@ import {
 } from './styles';
 
 function Forum() {
+  const [typeTab, setTypeTab] = useState('help');
+
   return (
     <Container>
       <Chat>
@@ -17,17 +19,22 @@ function Forum() {
         <Button
           text="ajudar"
           color="secondary"
+          disabled={typeTab === 'ask'}
+          onPress={() => setTypeTab('help')}
           stylesContainer={[styles.ButtonCustom, styles.ButtonLeft]}
         />
 
         <Button
           text="perguntar"
-          disabled
+          disabled={typeTab === 'help'}
+          onPress={() => setTypeTab('ask')}
           stylesContainer={[styles.ButtonCustom, styles.ButtonRight]}
         />
       </Tabs>
 
-      <Courses />
+      { typeTab === 'help' && (<Courses type="help" />) }
+
+      { typeTab === 'ask' && (<Courses type="ask" />) }
     </Container>
   );
 }
