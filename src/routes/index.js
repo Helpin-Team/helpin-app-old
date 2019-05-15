@@ -7,18 +7,18 @@ import {
 
 import { FluidNavigator } from 'react-navigation-fluid-transitions';
 
-import SignIn from './screens/Login/SignIn';
-import SignUp from './screens/Login/SignUp';
-import ResetPassword from './screens/Login/ResetPassword';
-import Splash from './screens/Login/Splash';
+import SignIn from '../screens/Login/SignIn';
+import SignUp from '../screens/Login/SignUp';
+import ResetPassword from '../screens/Login/ResetPassword';
+import Splash from '../screens/Login/Splash';
 
-import Home from './screens/Home';
-import Settings from './screens/Settings';
+import Home from '../screens/Home';
+import Settings from '../screens/Settings';
 
-import Forum from './screens/Forum';
-import Posts from './screens/Forum/Posts';
+import Forum from '../screens/Forum';
+import Posts from '../screens/Forum/Posts';
 
-import { colors } from './styles';
+import { colors } from '../styles';
 
 const Login = createAppContainer(FluidNavigator({
   SignIn: { screen: SignIn },
@@ -26,18 +26,12 @@ const Login = createAppContainer(FluidNavigator({
   ResetPassword: { screen: ResetPassword },
 }));
 
-Login.navigationOptions = {
-  headerStyle: {
-    display: 'none',
-  },
-};
-
 const ForumContainer = createAppContainer(FluidNavigator({
   Forum: { screen: Forum },
   Posts: { screen: Posts },
 }));
 
-ForumContainer.navigationOptions = {
+Login.navigationOptions = {
   headerStyle: {
     display: 'none',
   },

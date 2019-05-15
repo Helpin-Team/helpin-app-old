@@ -1,14 +1,15 @@
 import React from 'react';
+import { withNavigation } from 'react-navigation';
 
 import { fonts } from '../../../styles';
 
 import { Container, Title } from './styles';
 
-function Course({ title, color }) {
+function Course({ navigation, title, color }) {
   return (
     <Container
       color={color}
-      onPress={() => {}}
+      onPress={() => navigation.navigate('Posts', { type: 'help' })}
     >
       <Title
         style={fonts.giant}
@@ -19,4 +20,4 @@ function Course({ title, color }) {
   );
 }
 
-export default Course;
+export default withNavigation(Course);

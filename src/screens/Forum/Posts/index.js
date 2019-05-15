@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { Transition } from 'react-navigation-fluid-transitions';
 
-import {
-  FloatChat, Button, Courses, Post,
-} from '../../components';
+import { FloatChat, Button } from '../../../components';
 
+import { Text } from './styles';
 import {
   Container, Chat, Tabs, styles,
-} from './styles';
+} from '../styles';
 
-function Forum({ navigation }) {
+function Posts({ navigation }) {
   const initialType = navigation.getParam('type');
   const [typeTab, setTypeTab] = useState(initialType);
 
@@ -27,29 +27,23 @@ function Forum({ navigation }) {
               text="ajudar"
               color="secondary"
               disabled={typeTab === 'ask'}
-              onPress={() => setTypeTab('help')}
+              onPress={() => navigation.navigate('Forum', { type: 'help' })}
               stylesContainer={[styles.ButtonCustom, styles.ButtonLeft]}
             />
 
             <Button
               text="perguntar"
               disabled={typeTab === 'help'}
-              onPress={() => setTypeTab('ask')}
+              onPress={() => navigation.navigate('Forum', { type: 'ask' })}
               stylesContainer={[styles.ButtonCustom, styles.ButtonRight]}
             />
           </Tabs>
         </View>
       </Transition>
 
-      { typeTab === 'help' && (<Courses type="help" />) }
-
-      { typeTab === 'ask' && (<Courses type="ask" />) }
+      <Text>Posts</Text>
     </Container>
   );
 }
 
-Forum.navigationOptions = {
-  header: null,
-};
-
-export default Forum;
+export default withNavigation(Posts);
