@@ -1,7 +1,5 @@
-import styled from 'styled-components';
-import {
-  StyleSheet, View, Text, TouchableOpacity,
-} from 'react-native';
+import styled from 'styled-components/native';
+import { StyleSheet } from 'react-native';
 import { colors, metrics, fonts } from '../../styles';
 
 export const styles = StyleSheet.create({

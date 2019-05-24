@@ -118,10 +118,11 @@ class SignIn extends Component {
         <View style={styles.form}>
           <View style={styles.group}>
             <Input
-              label="E-mail"
               type="input"
-              style={mailError && styles.withError}
+              label="E-mail"
+              keyboardType="email-address"
               value={emailInput}
+              style={mailError && styles.withError}
               onChangeText={text => this.setState({ emailInput: text })}
             />
           </View>
@@ -159,8 +160,8 @@ class SignIn extends Component {
               </TouchableOpacity>
             </View>
           </View>
-          
-          <View style={styles.socialActions}>
+
+          {/* <View style={styles.socialActions}>
             <TouchableOpacity style={[styles.socialBtn, styles.facebook]} onPress={() => {}}>
               <Icon style={styles.socialIcon} name="facebook" size={28} />
             </TouchableOpacity>
@@ -168,7 +169,7 @@ class SignIn extends Component {
             <TouchableOpacity style={[styles.socialBtn, styles.google]} onPress={() => {}}>
               <Icon style={styles.socialIcon} name="google" size={28} />
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
 
         <Toast

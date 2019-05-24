@@ -42,7 +42,7 @@ class Input extends React.Component {
 
   renderDefault = (props) => {
     const {
-      type, icon, value, onChangeText, style,
+      type, icon, value, onChangeText, style, keyboardType
     } = this.props;
 
     return (
@@ -50,6 +50,7 @@ class Input extends React.Component {
         <TextInputMask
           {...props}
           value={value}
+          keyboardType={keyboardType}
           onChangeText={onChangeText}
           style={[
             styles.default,

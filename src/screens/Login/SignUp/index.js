@@ -98,6 +98,7 @@ class SignUp extends React.Component {
             <Input
               label="E-mail"
               value={emailInput}
+              keyboardType="email-address"
               style={mailError && styles.withError}
               onChangeText={text => this.setState({ emailInput: text })}
             />

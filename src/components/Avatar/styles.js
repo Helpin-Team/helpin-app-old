@@ -1,6 +1,5 @@
 
-import styled from 'styled-components';
-import { View, Image } from 'react-native';
+import styled from 'styled-components/native';
 import { colors } from '../../styles';
 
 export const Container = styled.View`
@@ -10,18 +9,14 @@ export const Container = styled.View`
   height: 36;
   border-radius: 100;
 
-  background: ${colors.lightBlue};
+  background: ${colors.dark};
 `;
 
-export const AvatarImage = styled.Image`
+export const AvatarImage = styled.Image.attrs(props => ({
+  source: !props.photo ? require('../../assets/images/default-avatar.jpg') : props.photo,
+}))`
   width: 36;
   height: 36;
   border-radius: 100;
   resize-mode: cover;
-`;
-
-export const AvatarPlaceholder = styled.Text`
-  color: ${colors.white};
-  font-size: 20;
-  font-family: "SegoeUI";
 `;
