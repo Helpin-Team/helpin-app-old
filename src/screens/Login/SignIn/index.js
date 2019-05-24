@@ -161,7 +161,7 @@ class SignIn extends Component {
             </View>
           </View>
 
-          <View style={styles.socialActions}>
+          {/* <View style={styles.socialActions}>
             <TouchableOpacity style={[styles.socialBtn, styles.facebook]} onPress={() => {}}>
               <Icon style={styles.socialIcon} name="facebook" size={28} />
             </TouchableOpacity>
@@ -169,7 +169,7 @@ class SignIn extends Component {
             <TouchableOpacity style={[styles.socialBtn, styles.google]} onPress={() => {}}>
               <Icon style={styles.socialIcon} name="google" size={28} />
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
 
         <Toast
