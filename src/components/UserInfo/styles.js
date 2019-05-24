@@ -27,6 +27,10 @@ export const TextSubtitle = styled.Text`
     color: ${colors.light};
 `;
 
-export const Config = styled.TouchableOpacity`
+export const Config = styled.TouchableOpacity.attrs({
+  hitSlop: {
+    top: 40, right: 40, bottom: 40, left: 40,
+  },
+})`
     margin-left: auto;
 `;

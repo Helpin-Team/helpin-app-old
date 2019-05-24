@@ -14,7 +14,7 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <StatusBar backgroundColor={colors.darker} />
+        <StatusBar backgroundColor="transparent" translucent />
 
         {/* <Provider store={store}> */}
         <Routes />
