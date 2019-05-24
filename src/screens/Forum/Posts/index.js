@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { Transition } from 'react-navigation-fluid-transitions';
 
-import { FloatChat, Button } from '../../../components';
+import { FloatChat, Button, Post } from '../../../components';
 
 import { Text } from './styles';
 import {
@@ -41,7 +41,9 @@ function Posts({ navigation }) {
         </View>
       </Transition>
 
-      <Text>Posts</Text>
+      <Text>
+        <Post />
+      </Text>
     </Container>
   );
 }

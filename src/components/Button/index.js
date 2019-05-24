@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { Text, TouchableOpacity } from 'react-native';
-import styles, { TextCustom } from './styles';
-import { colors, fonts } from '../../styles';
+import { TouchableOpacity } from 'react-native';
+import styles, { TextCustom, Container } from './styles';
+import { colors } from '../../styles';
 
 const getTheme = (color) => {
   const localColors = {
@@ -27,11 +27,16 @@ const Button = ({
   };
 
   return (
-    <TouchableOpacity style={[styles.container, stylesContainer]} onPress={onPress}>
+    <Container style={stylesContainer} onPress={onPress}>
       <LinearGradient {...props}>
-        <TextCustom style={styles.text} width={textSize}>{text}</TextCustom>
+        <TextCustom
+          style={styles.text}
+          width={textSize}
+        >
+          {text}
+        </TextCustom>
       </LinearGradient>
-    </TouchableOpacity>
+    </Container>
   );
 };
 
