@@ -59,16 +59,24 @@ class Input extends React.Component {
         />
 
         { !!icon && (
-          <TouchableOpacity onPress={() => {}} style={styles.icon}>
+          <TouchableOpacity
+            onPress={() => {}}
+            style={styles.icon}
+            hitSlop={{ top: 20, bottom: 20, left: 50, right: 50 }}
+          >
             <Icon name={icon} size={22} color={colors.secondary} />
           </TouchableOpacity>
         ) }
 
         { type === 'password' && (
-          <TouchableOpacity onPress={() => this.passwordVisibility()} style={styles.icon}>
-            <Image 
-              style={styles.eyeIcon} 
-              source={this.state.passwordVisibility ? eye : eyeOff} 
+          <TouchableOpacity
+            onPress={() => this.passwordVisibility()}
+            style={styles.icon}
+            hitSlop={{ top: 20, bottom: 20, left: 50, right: 50 }}
+          >
+            <Image
+              style={styles.eyeIcon}
+              source={this.state.passwordVisibility ? eye : eyeOff}
             />
           </TouchableOpacity>
         ) }
