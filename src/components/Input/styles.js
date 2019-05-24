@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 
   icon: {
     position: 'absolute',
-    top: 8,
+    top: 15,
     right: metrics.basePadding / 2,
   },
 
